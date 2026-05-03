@@ -1,6 +1,6 @@
 // Countdown Timer Logic
 const countDownDate = new Date();
-countDownDate.setDate(countDownDate.getDate() + 30); // 30 days from now
+countDownDate.setDate(countDownDate.getDate() + 20); // 20 days from now
 
 const updateCountdown = () => {
     const now = new Date().getTime();
