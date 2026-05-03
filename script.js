@@ -1,12 +1,22 @@
 // Security: Prevent Right-Click and Common Copy Shortcuts
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('keydown', e => {
-    if (e.ctrlKey && (e.key === 's' || e.key === 'u' || e.key === 'c' || e.key === 'v')) {
+    // Disable Copy/Paste/Save
+    if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'u' || e.key === 'c' || e.key === 'v' || e.key === 'p')) {
         e.preventDefault();
     }
-    if (e.metaKey && (e.key === 's' || e.key === 'u' || e.key === 'c' || e.key === 'v')) {
+    // Disable Developer Tools (F12, Cmd+Opt+I)
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.metaKey && e.altKey && e.key === 'i')) {
         e.preventDefault();
     }
+});
+
+// Discourage Screenshots: Blur content when window loses focus
+window.addEventListener('blur', () => {
+    document.body.style.filter = 'blur(20px)';
+});
+window.addEventListener('focus', () => {
+    document.body.style.filter = 'none';
 });
 
 // Countdown Timer Logic
