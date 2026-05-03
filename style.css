@@ -1042,50 +1042,47 @@ h1, h2, h3, h4 {
 /* Premium Partners */
 .premium-partners-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
-    padding: 4rem 2rem;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-    border-radius: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    margin-top: 3rem;
+    gap: 6rem;
+    padding: 6rem 0;
+    margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .partner-logo-box {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .partner-logo-box img {
-    max-height: 120px; /* Significantly larger */
-    max-width: 100%;
+    height: 120px; /* Fixed height for all to ensure consistency */
     width: auto;
-    height: auto;
-    filter: grayscale(1) opacity(0.7) brightness(1.2);
-    transition: all 0.5s ease;
+    max-width: 300px;
+    filter: none; /* No grayscale */
+    opacity: 1;
+    transition: all 0.4s ease;
 }
 
 .partner-logo-box img.newly-logo {
-    max-height: 180px; /* Massive size for Newly */
-    filter: grayscale(0) opacity(1);
-    drop-shadow: 0 0 20px rgba(255, 0, 234, 0.3);
+    height: 160px; /* Even bigger for Newly */
+    transform: scale(1.2);
 }
 
 .partner-logo-box:hover {
-    transform: scale(1.15);
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 24px;
+    transform: scale(1.1);
 }
 
 .partner-logo-box:hover img {
-    filter: grayscale(0) opacity(1);
-    transform: translateY(-10px);
+    filter: drop-shadow(0 10px 20px rgba(255, 255, 255, 0.1));
+}
+
+@media (max-width: 768px) {
+    .premium-partners-row { gap: 3rem; padding: 3rem 0; }
+    .partner-logo-box img { height: 80px; }
+    .partner-logo-box img.newly-logo { height: 100px; }
 }
 
 /* Cinematic Hero */
