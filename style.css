@@ -1292,21 +1292,25 @@ h1, h2, h3, h4 {
 
 /* Video Theater */
 .video-theater-wrapper {
-    max-width: 1000px;
+    max-width: 500px; /* Better for vertical/mobile style videos */
     margin: 0 auto;
 }
 
 .video-glass-frame {
     position: relative;
-    border-radius: 24px;
+    border-radius: 32px;
     overflow: hidden;
     border: 1px solid var(--glass-border);
-    box-shadow: var(--shadow-premium);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    background: #000;
 }
 
 .video-glass-frame video {
     width: 100%;
+    height: auto;
+    max-height: 75vh;
     display: block;
+    object-fit: contain;
 }
 
 .video-glow {
