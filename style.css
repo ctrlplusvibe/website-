@@ -32,6 +32,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 html {
@@ -1228,15 +1246,30 @@ h1, h2, h3, h4 {
 /* Gallery Enhancements */
 .premium-gallery-wrapper {
     display: grid;
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: 1fr 350px; /* Slightly wider to fit 3 columns */
     gap: 2rem;
+    align-items: start;
 }
 
 .thumbnails-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    max-height: 500px; /* Limit height and scroll */
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Custom scrollbar for thumbnails */
+.thumbnails-grid::-webkit-scrollbar {
+    width: 4px;
+}
+.thumbnails-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+.thumbnails-grid::-webkit-scrollbar-thumb {
+    background: var(--accent-cyan);
+    border-radius: 10px;
 }
 
 .thumb-card {

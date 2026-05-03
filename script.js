@@ -1,3 +1,14 @@
+// Security: Prevent Right-Click and Common Copy Shortcuts
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+    if (e.ctrlKey && (e.key === 's' || e.key === 'u' || e.key === 'c' || e.key === 'v')) {
+        e.preventDefault();
+    }
+    if (e.metaKey && (e.key === 's' || e.key === 'u' || e.key === 'c' || e.key === 'v')) {
+        e.preventDefault();
+    }
+});
+
 // Countdown Timer Logic
 const countDownDate = new Date();
 countDownDate.setDate(countDownDate.getDate() + 20); // 20 days from now
