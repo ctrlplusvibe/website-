@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Events | Ctrl + Vibe</title>
+    <meta name="description" content="Check out the recent and upcoming events, hackathons, and vibecoding sessions from the Ctrl + Vibe community.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="ambient-background"></div>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html"><img src="logo.png" alt="Ctrl + Vibe" class="nav-logo" onerror="this.src='https://placehold.co/200x50/050505/fff?text=Ctrl+%2B+Vibe'"></a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#features">Why Join</a>
+                <a href="events.html" style="color: var(--text-primary); font-weight: 600;">Events <span class="nav-badge">International</span></a>
+                <a href="#community">Community</a>
+            </div>
+            <a href="index.html#waitlist-form" class="btn-primary small">Join Waitlist</a>
+        </div>
+    </header>
+
+    <main class="events-page">
+        <section class="events-header">
+            <div class="badge">
+                <span class="pulse-dot" style="background-color: var(--accent-magenta); box-shadow: 0 0 10px var(--accent-magenta);"></span> What we've been up to
+            </div>
+            <h1 class="headline">Recent <span class="gradient-text-alt">Events</span></h1>
+            <p class="subtitle">From high-stakes 48-hour hackathons to midnight vibecoding sessions. See what the Ctrl + Vibe community has been building.</p>
+        </section>
+
+        <section class="events-grid-section">
+            <div class="events-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card glass-card" style="position: relative;">
+                    
+                    <div class="event-category magenta" style="position: absolute; top: 20px; right: 20px; z-index: 20;">Newly Hackathon</div>
+                    
+                    <div class="event-image-wrapper">
+                        <div class="slideshow-track" id="newly-carousel-track">
+                            <img src="images/event-image-1.webp" alt="Event 1" class="event-image">
+                            <img src="images/event-image-2.webp" alt="Event 2" class="event-image">
+                            <img src="images/event-image-3.webp" alt="Event 3" class="event-image">
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date"><i class="fa-regular fa-calendar"></i> April 2026 • ESU Jaffna</div>
+                        <h3 class="event-title">NEWLY MINI HACKATHON</h3>
+                        <p class="event-desc">
+                            An incredible day of innovation! 💡 Participants built AI-powered mobile apps 📱 and explored the future of No-Code development.<br><br>
+                            🔥 <strong>109</strong> students leveled up their skills.
+                        </p>
+                        <div class="event-hashtags" style="margin-bottom: 1.5rem;">
+                            <span class="hashtag" style="font-size: 0.7rem;">#Hackathon</span>
+                            <span class="hashtag" style="font-size: 0.7rem;">#AI</span>
+                            <span class="hashtag" style="font-size: 0.7rem;">#NoCode</span>
+                            <span class="hashtag" style="font-size: 0.7rem;">#Newly</span>
+                        </div>
+                        <a href="event-details.html" class="event-link">Explore Recap <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Placeholder for Next Event -->
+                <div class="event-card glass-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 2px dashed rgba(255, 255, 255, 0.1); background: transparent;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;">🚀</div>
+                    <h3 style="margin-bottom: 0.5rem; color: var(--text-primary);">Next Event Coming Soon</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Stay tuned for our next big hackathon or workshop!</p>
+                    <a href="index.html#waitlist-form" class="btn-primary small">Notify Me</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="community" class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Ctrl + Vibe" class="footer-logo" onerror="this.style.display='none'">
+                <p>Code Smart. Build Vibes. Community.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://discord.gg/FCnSf3Ej" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://github.com/ctrlplusvibe" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/company/ctrl-vibe/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ctrl + Vibe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
