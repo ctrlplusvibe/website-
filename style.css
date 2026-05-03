@@ -1057,12 +1057,20 @@ h1, h2, h3, h4 {
 }
 
 .partner-logo-box img {
-    max-height: 130px;
-    max-width: 90%;
+    max-height: 80px;
+    max-width: 160px;
     width: auto;
     height: auto;
-    filter: grayscale(1) opacity(0.95);
+    filter: grayscale(1) opacity(0.8);
     transition: all 0.3s ease;
+}
+
+/* Specific targeted size for Newly logo as requested */
+.partner-logo-box img.newly-logo {
+    max-height: 140px;
+    max-width: 280px;
+    filter: grayscale(0) opacity(1);
+    transform: scale(1.1);
 }
 
 .partner-logo-box:hover {
