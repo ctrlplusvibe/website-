@@ -1291,6 +1291,31 @@ h1, h2, h3, h4 {
 .thumb-card.active { border-color: var(--accent-cyan); }
 .thumb-card.active img { opacity: 1; }
 
+/* Anti-Screenshot Watermark Overlay */
+.slideshow-container::after,
+.thumb-card::after {
+    content: "CTRL + VIBE PROPERTY - DO NOT COPY";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.03); /* Extremely subtle watermark */
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    pointer-events: none;
+    z-index: 10;
+    transform: rotate(-15deg) scale(1.5);
+    white-space: nowrap;
+}
+
+.slideshow-container::after {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.05);
+}
+
 .slideshow-navigation {
     position: absolute;
     top: 50%;
