@@ -1042,46 +1042,50 @@ h1, h2, h3, h4 {
 /* Premium Partners */
 .premium-partners-row {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 4rem;
-    padding: 3rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-    border-radius: 32px;
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(12px);
-    box-shadow: var(--shadow-premium);
-    margin-top: 2rem;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    margin-top: 3rem;
 }
 
 .partner-logo-box {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2rem;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .partner-logo-box img {
-    max-height: 85px;
-    max-width: 200px;
+    max-height: 120px; /* Significantly larger */
+    max-width: 100%;
     width: auto;
     height: auto;
-    filter: grayscale(1) opacity(0.6) brightness(1.2);
-    transition: all 0.4s ease;
+    filter: grayscale(1) opacity(0.7) brightness(1.2);
+    transition: all 0.5s ease;
 }
 
 .partner-logo-box img.newly-logo {
-    max-height: 120px;
-    max-width: 240px;
+    max-height: 180px; /* Massive size for Newly */
     filter: grayscale(0) opacity(1);
+    drop-shadow: 0 0 20px rgba(255, 0, 234, 0.3);
 }
 
 .partner-logo-box:hover {
-    transform: scale(1.1) translateY(-5px);
+    transform: scale(1.15);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
 }
 
 .partner-logo-box:hover img {
     filter: grayscale(0) opacity(1);
+    transform: translateY(-10px);
 }
 
 /* Cinematic Hero */
