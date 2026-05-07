@@ -20,31 +20,42 @@ window.addEventListener('focus', () => {
 });
 
 // Countdown Timer Logic
-const countDownDate = new Date();
-countDownDate.setDate(countDownDate.getDate() + 20); // 20 days from now
+const timerCard = document.querySelector('.timer-card');
+const launchDate = timerCard ? new Date(timerCard.dataset.launchDate).getTime() : NaN;
+let countdownInterval;
+
+const setCountdownValue = (id, value) => {
+    const element = document.getElementById(id);
+    if (element) element.innerText = value.toString().padStart(2, '0');
+};
 
 const updateCountdown = () => {
-    const now = new Date().getTime();
-    const distance = countDownDate - now;
+    if (!Number.isFinite(launchDate)) return;
+
+    const now = Date.now();
+    const distance = Math.max(launchDate - now, 0);
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    const daysEl = document.getElementById("days");
-    const hoursEl = document.getElementById("hours");
-    const minsEl = document.getElementById("minutes");
-    const secsEl = document.getElementById("seconds");
+    setCountdownValue('days', days);
+    setCountdownValue('hours', hours);
+    setCountdownValue('minutes', minutes);
+    setCountdownValue('seconds', seconds);
 
-    if (daysEl) daysEl.innerText = days.toString().padStart(2, '0');
-    if (hoursEl) hoursEl.innerText = hours.toString().padStart(2, '0');
-    if (minsEl) minsEl.innerText = minutes.toString().padStart(2, '0');
-    if (secsEl) secsEl.innerText = seconds.toString().padStart(2, '0');
+    if (distance === 0) {
+        const timerTitle = document.querySelector('.timer-header h3');
+        if (timerTitle) timerTitle.innerText = 'System Online';
+        clearInterval(countdownInterval);
+    }
 };
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
+if (Number.isFinite(launchDate)) {
+    updateCountdown();
+    countdownInterval = setInterval(updateCountdown, 1000);
+}
 
 // Core Application Logic
 document.addEventListener("DOMContentLoaded", () => {
@@ -74,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing...';
                 submitBtn.disabled = true;
 
-                fetch('http://127.0.0.1:3000/api/waitlist', {
+                fetch('/api/waitlist', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email })
