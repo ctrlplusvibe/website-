@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Card | Ctrl + Vibe</title>
+    <meta name="description" content="Create a personalized Ctrl + Vibe social card with your photo, then download, share, and copy a ready-to-post caption.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="ambient-background"></div>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html"><img src="logo.png" alt="Ctrl + Vibe" class="nav-logo" onerror="this.src='https://placehold.co/200x50/050505/fff?text=Ctrl+%2B+Vibe'"></a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#features">Why Join</a>
+                <a href="events.html">Events <span class="nav-badge">International</span></a>
+                <a href="getyourcard.html" style="color: var(--text-primary); font-weight: 600;">Get Card</a>
+                <a href="#community">Community</a>
+            </div>
+            <a href="index.html#waitlist-form" class="btn-primary small">Join Waitlist</a>
+        </div>
+    </header>
+
+    <main class="card-builder-page">
+        <section class="card-builder-shell">
+            <div class="card-builder-copy">
+                <h1 class="headline">Build Your <span class="gradient-text">Post</span></h1>
+                <p class="subtitle">Upload a photo, tune the caption, and publish a ready-to-post Ctrl + Vibe community card.</p>
+                <div class="card-builder-actions">
+                    <label for="card-photo-input" class="upload-dropzone" id="card-upload-zone">
+                        <span class="upload-plus">+</span>
+                        <span class="upload-title">Upload Photo</span>
+                        <span class="upload-meta">PNG, JPG, or WEBP</span>
+                    </label>
+                    <input id="card-photo-input" class="sr-only" type="file" accept="image/png,image/jpeg,image/webp">
+                    <div class="download-share-row">
+                        <button type="button" class="btn-primary" id="download-card">
+                            <i class="fa-solid fa-download"></i> Download Card
+                        </button>
+                        <button type="button" class="btn-secondary" id="share-card">
+                            <i class="fa-solid fa-share-nodes"></i> Share Card
+                        </button>
+                    </div>
+                    <p class="card-status" id="card-status" role="status" aria-live="polite"></p>
+                </div>
+            </div>
+
+            <div class="card-preview-panel glass-card">
+                <div class="share-card-preview" id="share-card-preview" aria-label="Generated Ctrl + Vibe social card preview">
+                    <div class="preview-orbit orbit-one"></div>
+                    <div class="preview-orbit orbit-two"></div>
+                    <div class="preview-topbar">
+                        <div class="preview-brand-mark">Ctrl + Vibe</div>
+                    </div>
+                    <div class="preview-photo-frame">
+                        <img id="card-photo-preview" alt="Uploaded attendee preview">
+                        <div class="preview-photo-placeholder" id="card-photo-placeholder">
+                            <i class="fa-regular fa-image"></i>
+                            <span>Your photo</span>
+                        </div>
+                    </div>
+                    <div class="preview-card-copy">
+                        <span class="preview-kicker">Sri Lanka Builder Community</span>
+                        <h2>I am building with Ctrl + Vibe</h2>
+                        <p>Code smart. Build vibes. Share what you are creating with the next wave of developers.</p>
+                    </div>
+                    <div class="preview-footer-line">
+                        <span>#CtrlPlusVibe</span>
+                        <span>#BuildInPublic</span>
+                        <span>#SriLankaTech</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="caption-panel glass-card">
+            <div class="caption-header">
+                <div>
+                    <h2>Caption</h2>
+                    <p>Edit if you want, then copy and paste on X, LinkedIn, or Instagram.</p>
+                </div>
+                <button type="button" class="btn-secondary" id="copy-caption">
+                    <i class="fa-regular fa-copy"></i> Copy caption
+                </button>
+            </div>
+            <textarea id="card-caption" class="caption-textarea allow-copy" rows="5">I'm joining Ctrl + Vibe — Sri Lanka's next-gen developer community for builders who code smart, ship fast, and build in public. #CtrlPlusVibe #SriLankaTech #BuildInPublic #CodeSmart #BuildVibes</textarea>
+        </section>
+    </main>
+
+    <footer id="community" class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Ctrl + Vibe" class="footer-logo" onerror="this.style.display='none'">
+                <p>Code Smart. Build Vibes. Community.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://discord.gg/FCnSf3Ej" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://github.com/ctrlplusvibe" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/company/ctrl-vibe/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ctrl + Vibe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="getyourcard.html" class="floating-card-cta" data-floating-card-cta aria-label="Open Get Card page">
+        <i class="fa-solid fa-id-card"></i>
+        <span>Get Card</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
